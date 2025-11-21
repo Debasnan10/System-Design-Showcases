@@ -1,4 +1,3 @@
-````markdown
 # Event-Driven Architecture — Enterprise Guide
 
 **Prepared by:** Debasnan Singh
@@ -457,4 +456,7 @@ event-driven/
 **Author:** Debasnan Singh
 
 **Copyright (c) 2025 Debasnan Singh. Licensed under the MIT License.**
-````
+
+```
+
+```
