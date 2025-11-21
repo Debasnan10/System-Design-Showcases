@@ -1,5 +1,7 @@
 # System Design Showcases
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Docs](https://img.shields.io/badge/docs-designs%2FREADME.md-blue)](designs/README.md) [![Issues](https://img.shields.io/github/issues/Debasnan10/System-Design-Showcases)](https://github.com/Debasnan10/System-Design-Showcases/issues)
+
 A curated, practical collection of system-design patterns, architecture blueprints, and implementation notes for building reliable, scalable distributed systems. This repository is aimed at software engineers, architects, and technical interview candidates who want clear, example-driven explanations of design choices and trade-offs.
 
 <!-- Visual banner (optional): replace with your own image at designs/assets/banner-placeholder.png -->
