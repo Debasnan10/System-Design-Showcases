@@ -78,58 +78,14 @@ Boundary guidance: identify bounded contexts (events & domain), size by change f
 
 ## 4 — High-level architecture (diagrams)
 
-### Mermaid diagram (end-to-end)
-
-```mermaid
-flowchart LR
-  subgraph U[Users]
-    UX[Web/Mobile/CLI]
-  end
-
-  subgraph Edge
-    G[API Gateway (Auth, Rate Limit, TLS)]
-  end
-
-  subgraph Services
-    S1[Orders Service]
-    S2[Inventory Service]
-    S3[Pricing Service]
-    S4[Billing Service]
-    S5[AI Inference Service]
-    Worker[Background Workers]
-  end
-
-  subgraph Messaging
-    K[Kafka / Event Broker]
-  end
-
-  subgraph Data
-    P[(Postgres)]
-    V[(Vector DB)]
-    C[(Cache - Redis)]
-  end
-
-  UX -->|HTTPS| G --> S1
-  G --> S2
-  S1 -->|sync| S3
-  S1 -->|async produce order.created| K
-  K --> S2
-  K --> S4
-  S5 -->|calls| V
-  Worker -->|consume| K
-  S2 --> P
-  S1 --> P
-  S1 --> C
-```
-
 ### ASCII (simple)
 
 ```
 [User] --> [API Gateway] --> [Order Service] --> [Postgres]
-                                  |
-                                  v (async: order.created)
-                               [Kafka Topics] --> [Billing Service]
-                                               --> [Workers]
+                                 |
+                                 v (async: order.created)
+                              [Kafka Topics] --> [Billing Service]
+                                              --> [Workers]
 ```
 
 ---
